@@ -42,19 +42,10 @@ const data =  [
 
 <template>
 <div class="main-div">
-  <Card>
-    <template #title> Simple Card </template>
-    <template #content>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-            quas!
-        </p>
-    </template>
-</Card>
-<button class="btn-style">Ask Question</button>
+<button class="btn-style" @click="$router.push('/ask-question')">Ask Question</button>
 <div>
 <div class="card-view" v-for="item in data" :key="item.id">
-  <div class="tittle-clr">{{item.title}}</div>
+  <a href="/question-details"><div class="tittle-clr">{{item.title}}</div></a>
   <div>{{item.description}}</div>
 </div>
 </div>
@@ -87,7 +78,6 @@ const data =  [
     color: white;
     border: none;
     float: right;
-    margin-right: 134px;
 }
 .tittle-clr {
    color: hsl(206,100%,52%);
